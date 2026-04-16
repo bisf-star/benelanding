@@ -1,13 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>benecloud | Private digitale Dienste</title>
+    <title>benecloud | Dein digitaler Heimathafen</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .glass { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); }
-        .logo-text {
+        .logo-text-gradient {
+            background: linear-gradient(to right, #60a5fa, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .accent-gradient {
             background: linear-gradient(to right, #60a5fa, #818cf8, #34d399);
             -webkit-background-clip: text;
             background-clip: text;
@@ -17,66 +24,115 @@
 </head>
 <body class="bg-[#0f172a] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
+    <!-- Hintergrund-Deko -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-600/5 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-0 right-0 w-[30%] h-[30%] bg-emerald-600/5 rounded-full blur-[100px]"></div>
     </div>
 
+    <!-- Navigation / Brand -->
     <nav class="w-full py-10 px-6 flex justify-center">
         <div class="flex items-center gap-3 group cursor-default">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 via-indigo-400 to-emerald-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-6 transition-all duration-300">
-                <svg class="w-7 h-7 text-[#0f172a]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+            <!-- Perfektioniertes Wolken-Logo -->
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 via-indigo-400 to-emerald-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-all duration-300">
+                <svg class="w-8 h-8 text-[#0f172a]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 19c2.485 0 4.5-2.015 4.5-4.5 0-2.203-1.583-4.045-3.666-4.436C17.864 6.84 14.73 4 11 4 7.82 4 5.176 6.064 4.288 8.924c-1.802.825-3.038 2.66-3.038 4.793C1.25 16.735 3.515 19 6.25 19h11.25z"/>
+                </svg>
             </div>
-            <span class="text-3xl font-black tracking-tighter text-white">bene<span class="logo-text">cloud</span></span>
+            <span class="text-3xl font-black tracking-tighter text-white">bene<span class="logo-text-gradient">cloud</span></span>
         </div>
     </nav>
 
-    <main class="min-h-[60vh] flex flex-col items-center justify-center px-6 pb-20">
-        <div class="max-w-4xl text-center">
+    <main class="min-h-[60vh] flex flex-col items-center justify-center px-6 pb-20 text-center">
+        <div class="max-w-7xl">
             
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-bold tracking-[0.2em] text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
+            <!-- Das grüne Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase bg-emerald-400/10 rounded-full border border-emerald-400/20">
                 DSGVO-konform
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
-                Für alles, <br>
-                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-                    was dir wichtig ist.
-                </span>
+            <!-- Hauptüberschrift: Weiß außer "wichtig" mit Umbruch -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 tracking-tight leading-tight text-white">
+                Für alles,<br> 
+                was dir <span class="accent-gradient">wichtig</span> ist.
             </h1>
 
+            <!-- Untertext -->
             <p class="text-lg md:text-xl text-slate-400 mb-16 leading-relaxed max-w-2xl mx-auto">
-                Mit <strong>benecloud</strong> hast du die volle Kontrolle. Ein Account für deine E-Mails, 
-                deine Cloud und alles, was du für dein digitales Leben brauchst.
+                Alle wichtigen digitalen Dienste direkt aus deinem privaten Umfeld – <strong>unabhängig gehostet in Deutschland</strong> 
+                für maximale Sicherheit und Vertrauen.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-blue-500/50 transition-all group">
-                    <div class="text-blue-400 mb-4 text-3xl group-hover:scale-110 transition-transform">📧</div>
-                    <h3 class="font-bold text-white text-xl mb-2">benecloud Mail</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">Dein sicheres Postfach mit eigener Domain. Privat, werbefrei und ohne Schnüffelei.</p>
-                </div>
+            <!-- Services Grid: Optimiert für 5 Karten -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 
-                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-indigo-500/50 transition-all group">
-                    <div class="text-indigo-400 mb-4 text-3xl group-hover:scale-110 transition-transform">☁️</div>
-                    <h3 class="font-bold text-white text-xl mb-2">benecloud Drive</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">Powered by Nextcloud. Synchronisiere Files, Kalender und Kontakte nahtlos.</p>
+                <!-- Projektstatus Card -->
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-violet-500/50 transition-all group flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-[10px] font-bold text-violet-400 uppercase tracking-widest bg-violet-400/10 px-2 py-0.5 rounded-full">Status</div>
+                    <div class="text-violet-400 mb-6 flex justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white text-xl mb-2 text-center">Aktuell im Aufbau</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-center">Sämtliche Dienste befinden sich in Vorbereitung und sind bald erreichbar.</p>
                 </div>
 
-                <div class="p-8 border border-dashed border-slate-700/50 rounded-[2.5rem] flex flex-col items-center justify-center bg-slate-800/20">
-                    <span class="px-3 py-1 bg-slate-700 text-slate-400 text-[10px] font-bold uppercase rounded-full mb-4">Coming Soon</span>
-                    <h3 class="font-bold text-slate-500 text-lg mb-2">Weitere Dienste</h3>
-                    <p class="text-xs text-slate-500 text-center px-4">Wir arbeiten an VPN, Office und weiteren Tools für deine Freiheit.</p>
+                <!-- Mail -->
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-blue-500/50 transition-all group flex flex-col items-center">
+                    <div class="text-blue-400 mb-6 flex justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white text-xl mb-2">benecloud Mail</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-center">Dein sicheres Postfach mit eigener Domain. Werbefrei und ohne Schnüffelei.</p>
                 </div>
+                
+                <!-- Drive -->
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-indigo-500/50 transition-all group flex flex-col items-center">
+                    <div class="text-indigo-400 mb-6 flex justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white text-xl mb-2">benecloud Drive</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-center">Cloud-Speicher für deine Dateien und Fotos. Überall verfügbar, lokal gehostet und sicher.</p>
+                </div>
+
+                <!-- Personal Support Card -->
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-emerald-500/50 transition-all group flex flex-col items-center justify-center">
+                    <div class="text-emerald-400 mb-6 flex justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white text-xl mb-2 text-center">Support von Benedikt</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed text-center">Keine Warteschleifen, sondern echte Hilfe.</p>
+                </div>
+
+                <!-- Office Card: Angepasste Farbe und Bindestrich -->
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-blue-700/50 transition-all group flex flex-col items-center justify-center relative overflow-hidden text-center">
+                    <div class="text-blue-700 mb-6 flex justify-center group-hover:scale-110 transition-transform">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white text-xl mb-2">Office-Alternative</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Später im Jahr geplant: Deine unabhängige Lösung für Dokumente und Tabellen.</p>
+                </div>
+
             </div>
 
         </div>
     </main>
 
     <footer class="py-12 text-center text-slate-600 text-xs border-t border-slate-800/30">
-        <p class="mb-2">&copy; 2026 benecloud | Dein souveräner digitaler Space.</p>
+        <p class="mb-2">&copy; 2026 benecloud | Dein souveräner Digitaler Space.</p>
         <p class="opacity-50 italic">Einfach. Sicher. benecloud.</p>
     </footer>
 
 </body>
 </html>
+
+```
