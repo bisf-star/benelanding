@@ -70,7 +70,7 @@
         .card-content {
             display: grid;
             grid-template-rows: 0fr;
-            transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+            transition: grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
             opacity: 0;
         }
 
@@ -156,7 +156,7 @@
             </p>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 fade-in-up" style="animation-delay: 0.5s;">
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 fade-in-up" style="animation-delay: 0.5s;">
                 
                 <!-- Status Card -->
                 <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-violet-500/50 group flex flex-col items-center justify-center">
@@ -234,25 +234,54 @@
     </footer>
 
     <script>
-        // Logik für Klick-Events auf den Karten
-        document.querySelectorAll('.glass').forEach(card => {
-            card.addEventListener('click', () => {
-                // Schimmer-Effekt triggern
-                card.classList.remove('shimmer-active');
-                void card.offsetWidth; // Reflow
-                card.classList.add('shimmer-active');
+        const cards = document.querySelectorAll('.glass');
 
-                // Untertitel ein/ausblenden
+        // Funktion um die Animation einer einzelnen Karte zu triggern
+        const triggerCardAnimation = (card) => {
+            // Schimmer-Effekt triggern
+            card.classList.remove('shimmer-active');
+            void card.offsetWidth; // Reflow
+            card.classList.add('shimmer-active');
+            
+            // Kachel aufklappen
+            card.classList.add('expanded');
+        };
+
+        // Klick-Logik bleibt erhalten
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.remove('shimmer-active');
+                void card.offsetWidth; 
+                card.classList.add('shimmer-active');
                 card.classList.toggle('expanded');
             });
 
-            // Schimmer-Klasse nach Animation wieder entfernen
             card.addEventListener('animationend', (e) => {
                 if (e.animationName === 'cardShine') {
                     card.classList.remove('shimmer-active');
                 }
             });
         });
+
+        // Intersection Observer für JEDE Karte einzeln
+        const observerOptions = {
+            root: null,
+            threshold: 0.2 // Trigger bei 20% Sichtbarkeit
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Wenn die spezifische Karte sichtbar wird
+                if (entry.isIntersecting) {
+                    triggerCardAnimation(entry.target);
+                    // Nach dem ersten Trigger beobachten für diese Karte stoppen
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Jede Karte dem Observer hinzufügen
+        cards.forEach(card => observer.observe(card));
     </script>
 
 </body>
