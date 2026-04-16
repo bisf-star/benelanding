@@ -110,6 +110,10 @@
             background-clip: text;
             color: transparent;
             animation: textShimmer 4s linear infinite;
+            /* Geändert zu inline, um Wortabstände besser zu handhaben */
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
         }
 
         .bg-blob {
@@ -152,7 +156,8 @@
                 DSGVO-konform & Privat
             </div>
 
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-[1.1] text-white fade-in-up" style="animation-delay: 0.3s;">
+            <!-- Fix: tracking-normal und leading-snug für ausreichend Platz -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-normal leading-tight md:leading-snug text-white fade-in-up" style="animation-delay: 0.3s;">
                 Für alles,<br> 
                 was dir <span class="accent-gradient">wichtig</span> ist.
             </h1>
@@ -292,7 +297,6 @@
                     setTimeout(() => {
                         entry.target.classList.add('expanded');
                     }, 200);
-                    // Wir lassen den Observer aktiv, falls man die Expansion manuell steuern will
                 }
             });
         }, observerOptions);
