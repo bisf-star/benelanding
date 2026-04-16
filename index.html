@@ -1,62 +1,87 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digitaler Space | Privat & Sicher</title>
+    <title>benecloud | Dein digitaler Space</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); }
+        .logo-text {
+            background: linear-gradient(to right, #60a5fa, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-white font-sans antialiased selection:bg-blue-500/30">
+<body class="bg-[#0f172a] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
-    <div class="min-h-screen flex flex-col items-center justify-center px-6 py-20">
-        <div class="max-w-3xl text-center">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-600/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-0 w-[30%] h-[30%] bg-emerald-600/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <nav class="w-full py-10 px-6 flex justify-center">
+        <div class="flex items-center gap-3 group cursor-default">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 via-indigo-400 to-emerald-400 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-6 transition-all duration-300">
+                <svg class="w-7 h-7 text-[#0f172a]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+            </div>
+            <span class="text-3xl font-black tracking-tighter text-white">bene<span class="logo-text">cloud</span></span>
+        </div>
+    </nav>
+
+    <main class="min-h-[70vh] flex flex-col items-center justify-center px-6 pb-20">
+        <div class="max-w-4xl text-center">
             
-            <span class="inline-block px-4 py-1.5 mb-8 text-xs md:text-sm font-semibold tracking-widest text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
-                Demnächst verfügbar
-            </span>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-xs font-bold tracking-[0.2em] text-blue-400 uppercase bg-blue-400/10 rounded-full border border-blue-400/20">
+                Next-Gen Privacy Hub
+            </div>
 
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent leading-tight">
-                Dein privater digitaler Space.
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+                Ein Ort für alles, <br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+                    was dir wichtig ist.
+                </span>
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 mb-12 leading-relaxed max-w-2xl mx-auto">
-                Schluss mit der Abhängigkeit von US-Konzernen. Hier entsteht eine 
-                <strong>DSGVO-konforme</strong> Lösung für die Synchronisation deiner 
-                Kontakte, Kalender und Daten – absolut privat und sicher.
+                Mit <strong>benecloud</strong> hast du die volle Kontrolle. Ein Account für deine E-Mails, 
+                deine Cloud und alles, was du für dein digitales Leben brauchst.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-5 mb-20">
-                <a href="#" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-900/20 transform hover:-translate-y-1">
-                    Mehr zum Datenschutz
-                </a>
-                <a href="#details" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-2xl transition-all border border-slate-700">
-                    Konzept entdecken
-                </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-blue-500/50 transition-all group">
+                    <div class="text-blue-400 mb-4 text-3xl group-hover:scale-110 transition-transform">📧</div>
+                    <h3 class="font-bold text-white text-xl mb-2">benecloud Mail</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Dein sicheres Postfach mit eigener Domain. Privat, werbefrei und ohne Schnüffelei.</p>
+                </div>
+                
+                <div class="p-8 glass rounded-[2.5rem] border border-slate-700/50 hover:border-indigo-500/50 transition-all group">
+                    <div class="text-indigo-400 mb-4 text-3xl group-hover:scale-110 transition-transform">☁️</div>
+                    <h3 class="font-bold text-white text-xl mb-2">benecloud Drive</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Powered by Nextcloud. Synchronisiere Files, Kalender und Kontakte nahtlos.</p>
+                </div>
+
+                <div class="p-8 border border-dashed border-slate-700/50 rounded-[2.5rem] flex flex-col items-center justify-center bg-slate-800/20">
+                    <span class="px-3 py-1 bg-slate-700 text-slate-400 text-[10px] font-bold uppercase rounded-full mb-4">Coming Soon</span>
+                    <h3 class="font-bold text-slate-500 text-lg mb-2">Weitere Dienste</h3>
+                    <p class="text-xs text-slate-500 text-center px-4">Wir arbeiten an VPN, Office und weiteren Tools für deine Freiheit.</p>
+                </div>
             </div>
 
-            <div id="details" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10">
-                <div class="p-6 bg-slate-800/40 rounded-3xl border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-400 mb-4 text-2xl">🔒</div>
-                    <h3 class="font-bold text-white mb-2 text-lg">DSGVO-Konform</h3>
-                    <p class="text-sm text-slate-400">Volle Kontrolle über deine Daten auf europäischen Servern oder lokal.</p>
-                </div>
-                <div class="p-6 bg-slate-800/40 rounded-3xl border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-400 mb-4 text-2xl">🔄</div>
-                    <h3 class="font-bold text-white mb-2 text-lg">Sync & Share</h3>
-                    <p class="text-sm text-slate-400">Nahtlose Synchronisation von Kalendern und Kontakten ohne Google & Co.</p>
-                </div>
-                <div class="p-6 bg-slate-800/40 rounded-3xl border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-400 mb-4 text-2xl">🌍</div>
-                    <h3 class="font-bold text-white mb-2 text-lg">Unabhängig</h3>
-                    <p class="text-sm text-slate-400">Frei von Tracking und den Ökosystemen großer US-Technologiefirmen.</p>
-                </div>
+            <div class="mt-16">
+                <a href="#" class="px-12 py-5 bg-white text-[#0f172a] hover:bg-slate-200 font-black rounded-2xl transition-all shadow-xl transform hover:-translate-y-1 inline-block">
+                    Jetzt Space sichern
+                </a>
             </div>
 
         </div>
-    </div>
+    </main>
 
-    <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800/30">
-        <p>&copy; 2026 Mein Digitaler Space | Privatsphäre als Standard.</p>
+    <footer class="py-12 text-center text-slate-600 text-xs border-t border-slate-800/30">
+        <p class="mb-2">&copy; 2026 benecloud | Dein souveräner Digitaler Space.</p>
+        <p class="opacity-50 italic">Einfach. Sicher. benecloud.</p>
     </footer>
 
 </body>
